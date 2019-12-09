@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Inspire</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body id="bg-image">
     <div id="weather">
-      Your Weather Templates
+      Your Weather Template
     </div>
 
     <div id="quote">
       The Quote
     </div>
-
+		<div class="card" style="width: 18rem;">
     <div>
       A Todo List
       <div id="todo-error"></div>
-      <form onsubmit=""></form>
+			<form onsubmit="app.todoController.addTodo(event)">
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description" placeholder="New Task">
+					<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
       <div id="todos"></div>
-    </div>
+		</div>
+		
+	</div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script type="module" src="app/main.js"></script>
