@@ -38,7 +38,16 @@ class TodoService {
     //		and if you did find one
     //		change its completed status to whatever it is not (ex: false => true or true => false)
 
+    if (todo.completed == false) {
+      todo.completed = true;
+      todo.description = todo.description.strike();
+    } else {
+      todo.completed = false;
+      todo.description = todo.description;
+    }
+    this.getTodos();
     let res = await _todoApi.put(todoId, todo);
+    console.log(res);
 
     //TODO do you care about this data? or should you go get something else?
   }
@@ -47,7 +56,7 @@ class TodoService {
     //TODO Work through this one on your own
     //		what is the request type
     //		once the response comes back, what do you need to insure happens?
-    debugger;
+
     _todoApi.delete(`${todoId}`);
     this.getTodos();
   }
